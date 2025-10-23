@@ -1,0 +1,97 @@
+*{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+html, body, #container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-column input {
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.flex-column button {
+    width: auto;
+    border-radius: 20px;
+    
+}
+
+.flex-column input:nth-child(1) {
+    margin-bottom: 5px;
+    /* border-color: aqua; */
+
+   
+}
+
+.hidden{
+    display: none;
+}
+
+
+.bg-full{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#container-loginRegister{
+    width: 800px;
+    height: 500px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+}
+
+#bg-loginRegister, #loginRegister{
+    width: 50%;
+    height: 100%;
+}
+
+#bg-loginRegister{
+    background-image: url('../public/images/bg-loginRegister.jpeg');
+    
+}
+
+#logo{
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+    background-image: url('../public/images/icon-pokebala.jpeg');
+}
+
+#login,h2,#login-form{
+    margin: 0.5rem;
+
+}
+
+#btn-login{
+    background-color: blueviolet;
+    width: 100px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+
