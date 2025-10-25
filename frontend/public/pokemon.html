@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Search / Pokémon</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/pokemon.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Search/PokéBola</div>
+      <div class="search">
+        <input id="query" placeholder="Search for name (examp. pikachu)" />
+        <button id="btnSearch">Search</button>
+      </div>
+      <button id="btnLogout" title="Cerrar sesión">Exit</button>
+    </header>
+
+    <main>
+      <div id="gridWrap" class="grid-wrap">
+        <div id="grid" class="grid"></div>
+      </div>
+    </main>
+  </div>
+ 
+  <script type="text/javascript" src="js/pokemon.js"></script>
+</body>
+</html>

@@ -67,7 +67,7 @@ html, body, #container{
 }
 
 #bg-loginRegister{
-    background-image: url('../public/images/bg-loginRegister.jpeg');
+    background-image: url('../images/bg-loginRegister.jpeg');
     
 }
 
@@ -75,7 +75,7 @@ html, body, #container{
     width: 100px;
     height: 100px;
     margin: 1rem;
-    background-image: url('../public/images/icon-pokebala.jpeg');
+    background-image: url('../images/icon-pokebala.jpeg');
 }
 
 #login,h2,#login-form{

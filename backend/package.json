@@ -1,0 +1,11 @@
+{
+    "name": "pokebackend",
+    "version": "1.0.0",
+    "main": "src/server.js",
+    "scripts": {
+      "start": "node src/server.js"
+    },
+    "dependencies": {
+      "pg": "^8.11.0"
+    }
+  }
