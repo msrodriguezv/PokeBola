@@ -1,0 +1,45 @@
+name: Build and push Docker images
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push frontend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pokebola-frontend:latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/msrodriguezv/PokeBola
+
+      - name: Build and push backend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pokebola-backend:latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/msrodriguezv/PokeBola
+
+      - name: Build and push db 
+        uses: docker/build-push-action@v5
+        with:
+          context: ./db
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pokebola-db:latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/msrodriguezv/PokeBola
