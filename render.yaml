@@ -1,0 +1,36 @@
+services:
+  # 🟣 Base de datos PostgreSQL
+  - type: postgres
+    name: pokefav-db
+    plan: free
+    envVars:
+      - key: POSTGRES_DB
+        value: pokefav
+      - key: POSTGRES_USER
+        value: pokefy
+      - key: POSTGRES_PASSWORD
+        generateValue: true  # Render genera automáticamente una contraseña segura
+
+  # 🟡 Backend (API Node.js)
+  - type: web
+    name: pokefav-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pokefav-db
+          property: connectionString
+
+  # 🔵 Frontend (por ejemplo React/Vite)
+  - type: web
+    name: pokefav-frontend
+    env: docker
+    plan: free
+    dockerfilePath: ./frontend/Dockerfile
+    envVars:
+      - key: API_URL
+        value: https://pokefav-backend.onrender.com
